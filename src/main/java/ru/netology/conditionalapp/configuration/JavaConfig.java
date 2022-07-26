@@ -9,12 +9,12 @@ import ru.netology.conditionalapp.SystemProfile;
 
 @Configuration
 public class JavaConfig {
-    @ConditionalOnProperty(name ="netology.profile.dev",havingValue = "true",matchIfMissing = false)
+    @ConditionalOnProperty(name ="netology.profile.dev",havingValue = "true",matchIfMissing = true)
     @Bean
     public SystemProfile devProfile() {
         return new DevProfile();
     }
-    @ConditionalOnProperty(name ="netology.profile.dev",havingValue = "false",matchIfMissing = false)
+    @ConditionalOnProperty(name ="netology.profile.dev",havingValue = "false")
     @Bean
     public SystemProfile productionProfile() {
         return new ProductionProfile();
